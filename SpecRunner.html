@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pass me if you can</title>
+  <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+  <script src="https://unpkg.com/chai/chai.js"></script>
+  <script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+  <script src="https://sinonjs.org/releases/sinon-6.1.5.js"></script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <h1 class="title">Pass me if you can</h1>
+  <div id="mocha"></div>
+
+  <ul id="container">이곳은 결과창입니다. 여기에 transformAsHTML 문제의 결과를 출력하세요.</ul>
+
+  <script src="src/countWords.js"></script>
+  <script src="src/sumDigits.js"></script>
+  <script src="src/makeFib.js"></script>
+  <script src="src/multiplicativePersistence.js"></script>
+  <script src="src/transformEmployeeData.js"></script>
+  <script src="src/transformAsHTML.js"></script>
+  <script src="src/getObjectById.js"></script>
+
+  <script>
+  mocha.setup('bdd');
+  window.expect = chai.expect;
+  window.assert = chai.assert;
+  </script>
+  <script src="spec/countWords.test.js"></script>
+  <script src="spec/sumDigits.test.js"></script>
+  <script src="spec/makeFib.test.js"></script>
+  <script src="spec/multiplicativePersistence.test.js"></script>
+  <script src="spec/transformEmployeeData.test.js"></script>
+  <script src="spec/transformAsHTML.test.js"></script>
+  <script src="spec/getObjectById.test.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.run();
+  </script>
+</body>
+</html>
